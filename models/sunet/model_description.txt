@@ -1,0 +1,4 @@
+sunet_v2: 不带条件生成。
+sunet_v1: 带条件生成。
+sunet_v1_1: 带条件生成，全局变形。
+sunet_v1_2: 带条件生成，局部变形，但是条件图片直接提取特征为crossattention所需形状。
