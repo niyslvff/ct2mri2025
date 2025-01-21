@@ -409,20 +409,6 @@ class Train:
 
 
 class BaseCommand:
-    """
-    头颅:
-    训练dit: python3 train_diff_ct2mri.py --loss_function=l1 --batch_size=14 --model_name=dit --crop=0 --epoch_num=20000 --in_channels=1 --dims=2 --use_vae=0 --use_condition=1 --dataset_name=MedicalDataset3D
-    训练vit: python3 train_diff_ct2mri.py --loss_function=mse --batch_size=14 --model_name=vit --crop=0 --epoch_num=20000 --in_channels=2 --dims=2 --use_vae=0 --dataset_name=MedicalDataset3D
-    训练sunet_v1_2: python3 train_diff.py --version=v1_2 --crop=1 --in_channels=2 --dims=3 --use_vae=1 --image_root=../crop/concatenate_mri_pairs(168+200+v10v3) --dataset_name=concatenation
-    训练sunet_v1_twoloss_3d: 
-    python3 train_diff.py --organ=brain --use_vae=1 --loss_function=double --inner_channels=64 --epoch_num=8000 --batch_size=2 --version=v1 --crop=1 --in_channels=2 --vae_embedding_dims=64 --image_root=../crop/concatenate_mri_pairs_brain --dataset_name=concatenation --vae_weight_file=./vqvae/weight_file/brain/vqvae.3.20241011/best.pth
-
-    
-    骨盆:
-    训练sunet_v1_2d: python3 train_diff.py --organ=pelvis --epoch_num=3000 --batch_size=32 --depth=96 --height=240 --width=384 --version=v1 --crop=1 --in_channels=2 --dims=2 --image_root=../MIXED_2D_IMGS_GP.hdf5 --dataset_name=MixedSize2DDataset
-    训练sunet_v1_twoloss_3d: 
-    python3 train_diff.py --organ=pelvis --use_vae=1 --loss_function=double --inner_channels=64 --depth=96 --height=240 --width=384 --epoch_num=16000 --batch_size=1 --version=v1 --crop=1 --in_channels=2 --image_root=../crop/concatenate_mri_pairs_pelvis --dataset_name=concatenation --vae_weight_file=./vqvae/weight_file/pelvis/v1/best.pth
-    """
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="基础命令行解析器")
         self.add_base_arguments()

@@ -231,10 +231,6 @@ class Train:
 
 
 class BaseCommand:
-    r"""训练vae
-    训练头颅的vqvae: python3 train_vae.py --crop=1 --embedding_dim=64
-    训练骨盆的vqvae: python3 train_vae.py --depth=96 --height=240 --width=384 --image_root=../crop/preprocess_globalNormAndEnContrast_pelvis --crop=1
-    """
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="基础命令行解析器")
         self.add_base_arguments()

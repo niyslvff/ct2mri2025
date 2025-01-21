@@ -317,26 +317,6 @@ class Test:
 
 
 class BaseCommand:
-    r"""
-    头颅:
-    测试dit: python3 test_diff.py --model_name=dit --version=dit.None.2d.20241227 --dims=2 --sample_method=ddpm --use_collate=1
-    测试vit: python3 test_diff.py --model_name=vit --version=dit.None.2d.20241129 --dims=2 --sample_method=ddim
-    测试sunet_v1_2: python3 test_diff.py --version=v1_2_3d --dataset_name=concatenation --use_vae=1 --image_root=../crop/concatenate_mri_pairs_brain
-    测试sunet_v2: python3 test_diff.py --version=v2 --in_channels=1
-    测试vqvae_v1(随机剪裁训练8000epochs)+sunet_v1(使用twoloss训练): 
-    python3 test_diff.py --version=v1_twoloss_3d --dataset=concatenation --use_vae=1 --dims=3 --inner_channel=64 --image_root=../crop/concatenate_mri_pairs_brain --vae_weight_file=../train/vqvae/weight_file/brain/v1/best.pth
-    单张测试ddim:
-    python3 test_diff.py --version=sunet.v1.3d.latent.20241012 --dataset=concatenation --use_vae=1 --inner_channel=64 --dims=3 --double_channels=0 --if_loop=1 --vae_embedding_dims=64 --sample_method=ddim --image_root=../crop/concatenate_mri_pairs_brain --vae_weight_file=../train/vqvae/weight_file/brain/vqvae.3.20241011/best.pth
-
-
-    骨盆:
-    测试sunet_v1_2d, 循环生成层叠体，使用ddim采样:
-    python3 test_diff.py --organ=pelvis --generate_concatenated_volume=1 --depth=96 --height=240 --width=384 --dims=2 --if_loop=0 --version=sunet.v1.2d.20241003 --dataset_name=Raw3dDiffusion160224168Dataset --image_root=../crop/preprocess_globalNormAndEnContrast_pelvis --sample_method=ddim
-    测试sunet_v1_twoloss_3d，使用ddim:
-    python3 test_diff.py --organ=pelvis --dims=3 --version=sunet.v1.3d.latent.20241004 --dataset_name=concatenation --use_vae=1 --inner_channel=64 --if_loop=1 --sample_method=ddim --depth=96 --height=240 --width=384 --image_root=../crop/concatenate_mri_pairs_pelvis --vae_weight_file=../train/vqvae/weight_file/pelvis/v1/best.pth
-
-
-    """
     def __init__(self) -> None:
         self.parser = argparse.ArgumentParser()
         self.add_base_arguments()
