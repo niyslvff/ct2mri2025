@@ -61,10 +61,12 @@ python3 test_diff.py --version=v1_twoloss_3d --dataset=concatenation --use_vae=1
 
 # reference
 ```
-@article{sdmsdm,
-  title={Scalable Diffusion Models for Inter-modality Volumetric Medical Image Translation,
-  journal={The Visual Computer},
-
+@misc{sdmsdm2025,
+      title={Scalable Diffusion Models for Inter-modality Volumetric Medical Image Translation}, 
+      author={Yusen Ni, Ji Ma, Jinjin chen},
+      year={2025},
+      publisher = {GitHub},
+      howpublished = {\url{https://github.com/niyslvff/ct2mri2025}},
 }
 ```
 
